@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Video Click Redirect</title>
+  <style>
+    body {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      margin:0;
+      background:#000;
+    }
+    video {
+      width:100%;
+      max-width:720px;
+      border-radius:10px;
+    }
+  </style>
+</head>
+<body>
+
+<video id="vid" controls playsinline preload="metadata">
+  <source src="https://cdn.videy.co/2TzRDyE01.mp4" type="video/mp4">
+</video>
+
+<script>
+  const video = document.getElementById("vid");
+
+  // GANTI LINK IKLAN DI SINI
+  const adUrl = "https://capcut-yt.onelink.me/W3Oy?af_dp=capcut%3A%2F%2Fmain%2Fweb%3Fhide_nav_bar%3D1%26full_screen%3D1%26immersive_mode%3D1%26loading_bgcolor%3Dffffff%26nav_bar_color%3Dffffff%26status_bar_color%3Dffffffff%26status_font_dark%3D1%26title_color%3D000000ff%26hide_nav_bar%3D1%26theme%3Dlight%26web_url%3Dhttps%253A%252F%252Fwww.capcut.com%252Factivities%252Fpick%252Freferral-main%253Fcampaign_key%253Dpick_special%2526code%253D%2526invitor_did%253D7586922846984750600%2526invitor_uid%253D7589994628150494228%2526sub_campaign_key%253Dpick_referral_cash_ugc%2526uniq_id%253D188592942852&af_siteid=MS4wLjABAAAANwkJuWIRFOzg5uCpDRpMj4OX-QryoDgn-yYlXQnRwQQ&campaign_id=pick_referral_cash_ugc&deep_link_value=capcut%3A%2F%2Fmain%2Fweb%3Fhide_nav_bar%3D1%26full_screen%3D1%26immersive_mode%3D1%26loading_bgcolor%3Dffffff%26nav_bar_color%3Dffffff%26status_bar_color%3Dffffffff%26status_font_dark%3D1%26title_color%3D000000ff%26hide_nav_bar%3D1%26theme%3Dlight%26web_url%3Dhttps%253A%252F%252Fwww.capcut.com%252Factivities%252Fpick%252Freferral-main%253Fcampaign_key%253Dpick_special%2526code%253D%2526invitor_did%253D7586922846984750600%2526invitor_uid%253D7589994628150494228%2526sub_campaign_key%253Dpick_referral_cash_ugc%2526uniq_id%253D188592942852&enter_from=referral_ugc&pid=referral_ugc";
+
+  let alreadyRedirect = false;
+
+  video.addEventListener("play", function () {
+    if (alreadyRedirect) return;
+
+    alreadyRedirect = true;
+    video.pause(); // hentikan video
+    window.open(adUrl, "_blank"); // buka TAB BARU
+  });
+</script>
+
+</body>
+</html>
